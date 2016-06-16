@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<!--
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+    <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.js"></script>
+    <style>
+    table {
+        border: 1px solid #eee;
+        float: left;
+    }
+    
+    td {
+        width: 15px;
+        height: 10px;
+    }
+    
+    caption {
+        text-align: center;
+    }
+    </style>
+    <script>
+    $(function() {
+        var tr = $('<tr></tr>');
+        for (var i = 0; i < 17; i++) {
+            tr.append($('<td></td>').clone());
+        }
+        $('table').each(function() {
+            for (var i = 0; i < 9; i++) {
+                $(this).append(tr.clone());
+            }
+        });
+        InitCanva();
+    });
+    var polA = [];
+    var polB = [];
+    var polC = [];
+    var Steps = [];
+    polA.pol = "A";
+    polB.pol = "B";
+    polC.pol = "C";
+    //inti canva
+    function InitCanva() {
+        polA = [];
+        polB = [];
+        polC = [];
+        polA.pol = "A";
+        polB.pol = "B";
+        polC.pol = "C";
+        Steps = [];
+        var level = $('#level').val();
+        $("td").css("background", "#FFF");
+        for (var i = 1; i <= level; i++) {
+            polA.push(i * 2 - 1);
+        }
+        Draw(polA);
+        $("#step").click();
+    }
+    function Step() {
+        if (Steps.length > 0) {
+            var s = Steps.shift();
+            DrawUI(s);
+        } else {
+            clearInterval(window.t);
+        }
+    }
+    function Draw(pol) {
+        var tmp = [];
+        tmp.pol = pol.pol;
+        for (var i = 0; i < pol.length; i++) {
+            tmp.push(pol[i]);
+        }
+        Steps.push(tmp);
+    }
+    function DrawUI(pol) {
+        var tb = $('#pole' + pol.pol);
+        var level = pol.length;
+        tb.find("td").css("background", "#FFF");
+        var trs = tb.find("tr:gt(" + (9 - level - 1) + ")");
+        for (var i = 0; i < trs.length; i++) {
+            var min = 8 - (pol[i] + 1) / 2;
+            var max = 8 + (pol[i] + 1) / 2 - 1;
+            $(trs[i]).find("td:gt(" + min + ")").css("background", "#000");
+            $(trs[i]).find("td:gt(" + max + ")").css("background", "#FFF");
+        }
+    }
+    function MoveHanoi(level, pol_A, pol_B, pol_C) {
+        if (level == 1) {
+            console.log(pol_A.pol + '-->' + pol_C.pol);
+            var m = pol_A.shift();
+            pol_C.reverse();
+            pol_C.push(m);
+            pol_C.reverse();
+            Draw(pol_A);
+            Draw(pol_C);
+        } else {
+            MoveHanoi(level - 1, pol_A, pol_C, pol_B);
+            MoveHanoi(1, pol_A, pol_B, pol_C);
+            MoveHanoi(level - 1, pol_B, pol_A, pol_C);
+        }
+    }
+    function Play() {
+        InitCanva();
+        var level = $('#level').val();
+        MoveHanoi(level, polA, polB, polC);
+        window.t = setInterval(function() {
+            $("#step").click();
+        }, 300);
+    }
+    function Delay(minseconds) {
+        var t = +new Date();
+        while (+new Date() - t < minseconds) {}
+    }
+    </script>
+</head>
+
+<body>
+    Level:
+    <select name="level" id="level" onchange="InitCanva()">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <button onclick="Play()" class="btn-primary">Play</button>
+    <button id="step" onclick="Step()" class="btn-primary" style="display:none;">Step</button>
+    <hr>
+    <div>
+        <table id="poleA">
+            <caption>
+                <h3>Pole A</h3></caption>
+        </table>
+        <table id="poleB">
+            <caption>
+                <h3>Pole B</h3></caption>
+        </table>
+        <table id="poleC">
+            <caption>
+                <h3>Pole C</h3></caption>
+        </table>
+    </div>    
+</body>
+
+</html>

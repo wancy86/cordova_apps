@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+D:\GitHub\cordova_apps\.metadata\.plugins\org.eclipse.jdt.core
+1754566309.index
+715257351.index
+475098746.index
