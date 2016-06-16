@@ -17,12 +17,11 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<!-- <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
@@ -38,4 +37,359 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BoyStyle</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/bs.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/bs.ico" type="image/x-icon" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+    .thumbnail img {
+        max-height: 428.25px;
+        min-height: 428.25px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!--navbar-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header text-primary">
+                    <h1> BoyStyle! <small>-- 省钱，更赚钱！</small> </h1>
+                </div>
+                <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/index.html"><span class="glyphicon glyphicon-home"></span> BoyStyle</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li></li>
+                            <!-- placeholder -->
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" onclick="ShowByCategory(this,'男装',1)" class="dropdown-toggle" data-toggle="dropdown">男装<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ShowByCategory(this,'男装',1)">衣裤</a>
+                                    </li>
+                                    <li class="divider"> </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ShowByCategory(this,'男鞋',1)">鞋子</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" onclick="ShowByCategory(this,'女装',1)" class="dropdown-toggle" data-toggle="dropdown">女装<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ShowByCategory(this,'女装',1)">衣裙</a>
+                                    </li>
+                                    <li class="divider"> </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ShowByCategory(this,'女鞋',1)">鞋子</a>
+                                    </li>
+                                    <li class="divider"> </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ShowByCategory(this,'精美配饰',1)">精美配饰</a>
+                                    </li>
+                                    <li class="divider"> </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ShowByCategory(this,'美容护肤',1)">美容护肤</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" onclick="ShowByCategory(this,'童装',1)" class="dropdown-toggle" data-toggle="dropdown">童装<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ShowByCategory(this,'童装',1)">童装</a>
+                                    </li>
+                                    <li class="divider"> </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="ShowByCategory(this,'玩具',1)">玩具</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="ShowByCategory(this,'电子产品',1)">电子产品</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="ShowByCategory(this,'美食',1)">美食</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" onclick="ShowByCategory(this,'其他',1)">意想不到</a>
+                            </li>
+                        </ul>                        
+                        <!-- 登陆后 -->
+                        <ul class="nav navbar-nav navbar-right" title="搜索将进入爱淘宝，购物同样有返利" style="padding: 6px;">
+                            <li>
+                                <div class="form-inline">
+                                    <div class="input-group">
+                                        <input id="keyword" name="keyword" type="text" class="form-control" placeholder="爱淘宝搜索返利">
+                                        <span style="cursor: pointer;" class="input-group-addon" id="search" type="button" class="btn " onclick="GotoAitaobao()"><span class="glyphicon glyphicon-search"></span> 搜索</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--content-->
+        <div class="row">
+            <div class="col-md-12" id="content">
+            </div>
+        </div>
+        <!--footer-->
+        <div class="row">
+            <div class="col-md-12">
+                <hr style="margin-top:30px;">
+                <div class="col-md-3 col-md-offset-2">
+                    <dl>
+                        <dt>
+                            为什么要用BoyStyle
+                        </dt>
+                        <dd>
+                            同一商品，从我们这里点击购买，有折扣！
+                        </dd>
+                        <dd>
+                            专属链接邀请好友注册，他人购物，你拿佣金！
+                        </dd>
+                        <dd>
+                            所有宝贝，件件精选，最美的，最好的，都在这里！
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled">
+                        <li>
+                            <b>网站信息</b>
+                        </li>
+                        <li>
+                            <a style="color:#333" href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action">粤ICP备08109441号</a>
+                        </li>
+                        <li>
+                            © 2015-2016 BoyStyle.CN 版权所有
+                        </li>
+                        <!-- <li>
+                            <script type="text/javascript">
+                            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                            document.write(unescape("%3Cspan id='cnzz_stat_icon_1257892590'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257892590' type='text/javascript'%3E%3C/script%3E"));
+                            </script>
+                        </li> -->
+                        </ol>
+                </div>
+                <div class="col-md-2">
+                    <address>
+                        <strong>联系我们</strong>
+                        <br>Tel: (86) 13028865077
+                        <br> <a href="mailto:BoyStyle_CN@163.com">BoyStyle_CN@163.com</a>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pager.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        // RenderJSON("/data/BFF7A6473FF23C3C_1_50.json");
+        var JSONList = [];
+        JSONList.push({
+            category: '包包',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: 'ECC905672DFA420D_1_48.json'
+        });
+        JSONList.push({
+            category: '品质生活',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: '1F269A4CED11F2F6_1_48.json'
+        });
+        JSONList.push({
+            category: '品质生活',
+            load_order: '2',
+            Data_rows: '48',
+            File_Name: '1F269A4CED11F2F6_49_96.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_1_48.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '2',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_49_96.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '3',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_97_144.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '4',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_145_192.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '5',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_193_240.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '6',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_241_288.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '7',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_289_336.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '8',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_337_384.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '9',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_385_432.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '10',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_433_480.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '11',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_481_528.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '12',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_529_576.json'
+        });
+        JSONList.push({
+            category: '女装',
+            load_order: '13',
+            Data_rows: '48',
+            File_Name: '48961D3392194B13_577_624.json'
+        });
+        JSONList.push({
+            category: '女鞋',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: '663941F898D1FDD6_1_48.json'
+        });
+        JSONList.push({
+            category: '玩具',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: 'F6A029B97C7B85CE_1_48.json'
+        });
+        JSONList.push({
+            category: '电子产品',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: '8E0123644FF6C0A1_1_48.json'
+        });
+        JSONList.push({
+            category: '电子产品',
+            load_order: '2',
+            Data_rows: '48',
+            File_Name: '8E0123644FF6C0A1_49_96.json'
+        });
+        JSONList.push({
+            category: '男装',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: '55AE1B3331574ED1_1_48.json'
+        });
+        JSONList.push({
+            category: '男装',
+            load_order: '2',
+            Data_rows: '48',
+            File_Name: '55AE1B3331574ED1_49_96.json'
+        });
+        JSONList.push({
+            category: '男鞋',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: '0211CBEF103E1637_1_48.json'
+        });
+        JSONList.push({
+            category: '男鞋',
+            load_order: '2',
+            Data_rows: '48',
+            File_Name: '0211CBEF103E1637_49_96.json'
+        });
+        JSONList.push({
+            category: '男鞋',
+            load_order: '3',
+            Data_rows: '48',
+            File_Name: '0211CBEF103E1637_97_144.json'
+        });
+        JSONList.push({
+            category: '童装',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: '5AF035B8D3741A55_1_48.json'
+        });
+        JSONList.push({
+            category: '童装',
+            load_order: '2',
+            Data_rows: '48',
+            File_Name: '5AF035B8D3741A55_49_96.json'
+        });
+        JSONList.push({
+            category: '美食',
+            load_order: '1',
+            Data_rows: '48',
+            File_Name: 'FD0F2BA821918F4E_1_48.json'
+        });
+        JSONList.push({
+            category: '美食',
+            load_order: '2',
+            Data_rows: '48',
+            File_Name: 'FD0F2BA821918F4E_49_96.json'
+        });
+        $("#content").data("JSONList", JSONList);
+        ScrollPaging();
+    });
+    </script>
+</body>
+
 </html>
+
