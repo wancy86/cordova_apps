@@ -170,6 +170,7 @@ function ShowByCategory(obj, category, load_order) {
 
     // "/BFF7A6473FF23C3C_1_50.json"
     var site="http://192.168.1.40/";
+    // site="";
     var jsonURL = site+"data/" + JSONFile.File_Name;
 
     // console.log(jsonURL);

@@ -1,1 +1,3 @@
 *.log
+cordova_plugins/*
+demo1/*

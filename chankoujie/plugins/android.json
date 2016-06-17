@@ -1,0 +1,52 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "cordova-plugin-themeablebrowser": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "at.modalog.cordova.plugin.cache": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "com.spout.phonegap.plugins.baidulocation": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "nl.x-services.plugins.socialsharing": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.example.chankoujie"
+        }
+    }
+}

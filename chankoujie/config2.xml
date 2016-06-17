@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.chankoujie" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ChanKouJie</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+
+    <perference name="Orientation" value="portrait"/>
+    <perference name="SplashScreen" value="screen"/>
+    <perference name="SplashScreenDelay" value="5000"/>
+
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="res/android/icon/icon.png" />
+        <icon src="res/android/icon/ldpi-36.icon.png" />
+        <icon src="res/android/icon/mdpi-48.icon.png" />
+        <icon src="res/android/icon/hdpi-72.icon.png" />
+        <icon src="res/android/icon/xhdpi-96.icon.png" />
+        <icon src="res/android/icon/xxhdpi-144.icon.png" />
+        <icon src="res/android/icon/xxxhdpi-192.icon.png" />
+
+        <splash src="res/android/splash/port-ldpi-200x320.png" density="port-ldpi"/>
+        <splash src="res/android/splash/port-mdpi-320x480.png" density="port-mdpi"/>
+        <splash src="res/android/splash/port-hdpi-480x800.png" density="port-hdpi"/>
+        <splash src="res/android/splash/port-xhdpi-720x1280.png" density="port-xhdpi"/>
+
+        <splash src="res/android/splash/land-ldpi-200x320.png" density="land-ldpi"/>
+        <splash src="res/android/splash/land-mdpi-320x480.png" density="land-mdpi"/>
+        <splash src="res/android/splash/land-hdpi-480x800.png" density="land-hdpi"/>
+        <splash src="res/android/splash/land-xhdpi-720x1280.png" density="land-xhdpi"/>
+
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>

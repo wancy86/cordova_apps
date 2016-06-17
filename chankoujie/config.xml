@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.chankoujie.chankoujie" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>馋口街</name>
+    <description>
+        馋口街是一款综合型美食应用：想自己做菜么，馋口街街友分享了大量的私房菜谱，一定有你喜欢的菜；看电视嘴巴寂寞么，来看看馋口街街友都吃些什么可口零食吧；今天不
+    想做或者想和闺蜜一起出去吃，来馋口街看看你身边有什么好的餐馆值得尝尝撒... (*^__^*) 嘻嘻……， 怎么样是不是一应俱全！生活有很多种味道，来馋口街，让你的生活变得更有味
+    道吧！
+    </description>
+    <author email="dev@chankoujie.com" href="http://www.chankoujie.com">
+        馋口街开发团队
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon src="res/android/icon/icon.png" />
+        <icon density="ldpi" src="res/android/icon/ldpi-36.png" />
+        <icon density="mdpi" src="res/android/icon/mdpi-48.png" />
+        <icon density="hdpi" src="res/android/icon/hdpi-72.png" />
+        <icon density="xhdpi" src="res/android/icon/xhdpi-96.png" />
+        <icon density="xxhdpi" src="res/android/icon/xxhdpi-144.png" />
+        <icon density="xxxhdpi" src="res/android/icon/xxxhdpi-192.png" />
+        <splash density="port-ldpi" src="res/android/splash/port-ldpi-200x320.png" />
+        <splash density="port-mdpi" src="res/android/splash/port-mdpi-320x480.png" />
+        <splash density="port-hdpi" src="res/android/splash/port-hdpi-480x800.png" />
+        <splash density="port-xhdpi" src="res/android/splash/port-xhdpi-720x1280.png" />
+        <splash density="land-ldpi" src="res/android/splash/land-ldpi-320x200.png" />
+        <splash density="land-mdpi" src="res/android/splash/land-mdpi-480x320.png" />
+        <splash density="land-hdpi" src="res/android/splash/land-hdpi-800x480.png" />
+        <splash density="land-xhdpi" src="res/android/splash/land-xhdpi-1280x720.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="xwalkVersion" value="14+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+</widget>
